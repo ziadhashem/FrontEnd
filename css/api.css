@@ -163,3 +163,13 @@ section {
 #section_characters{
     padding: 0;
 }
+
+
+.section-tours {
+    background-color: #f7f7f7;
+}
+
+.card_text{
+    font-family: 'Anton', sans-serif;
+    font-family: 'Architects Daughter', cursive;
+}
