@@ -78,6 +78,7 @@
 </section>
 <!--SLIDER-->
 <!---------------->
+<hr class="new5">
 <!-- CHARACTERS -->
 <section id="section_characters" class="pb-5">
     <div class="container">
@@ -99,7 +100,6 @@
     </div>
 </section>
 <!-- episodes -->
-<hr>
 <!--  Quotes  -->
 <section id="section_quotes" class="pb-5">
     <div class="container">
@@ -126,17 +126,58 @@
         const data = await response.json()
         return data;
     }
+    async function getQuotes() {
+        const response = await fetch("https://www.breakingbadapi.com/api/quotes");
+        const data = await response.json()
+        return data;
+    }
     getCharacters().then(function (result) {
+        console.log(result);
         for (i = 0; i<result.length; i++) {
             let name =  result[i].name;
             let img =  result[i].img;
-            let card = getCard(name, img);
+            let nickname =  result[i].nickname
+            let birthday =  result[i].birthday
+            let portrayed =  result[i].portrayed
+            let status = result[i].status;
+            let occupation = result[i].occupation;
+            let occupation_section = `<ul>`;
+            occupation_section += `<li>${occupation[0]}</li>`;
+            occupation_section += `</ul>`;
+            let card = getCharacterCard(name, img, nickname, birthday, portrayed, status, occupation_section);
             $(`#CHARACTERS`).append(card);
         }
     });
 
+    getQuotes().then(function (result) {
+        for (i = 0; i<result.length; i++) {
+            let quote =  result[i].quote;
+            let author =  result[i].author;
+            let card = getQuotesCard(quote, author);
+            $(`#QUOTES`).append(card);
+        }
+    });
+
+    function getQuotesCard(quote, author){
+        var colors = ['#b8b5ff', '#ffd384', '#cee6b4'];
+        var random_color = colors[Math.floor(Math.random() * colors.length)];
+        return ` <blockquote class="quote-box card_text" style="background:${random_color};">
+                  <p class="quotation-mark">
+                    “
+                  </p>
+                  <p class="quote-text">
+                  ${quote}
+                  </p>
+                  <hr>
+                  <div class="blog-post-actions">
+                    <p class="blog-post-bottom pull-left">
+                      ${author}
+                    </p>
+                  </div>
+                </blockquote>`;
+    }
+
     getEpisodes().then(function (result) {
-        console.log(result);
         let img = 'img/6.jpg';
         for (i = 0; i<result.length; i++) {
             let title =  result[i].title;
@@ -217,7 +258,7 @@
     }
 
 
-    function getCard(name, img){
+    function getCharacterCard(name, img, nickname, birthday, portrayed, status, occupation_section){
         return `  <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
@@ -227,7 +268,10 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="${img}" alt="card image"></p>
                                     <h4 class="card-title">${name}</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                    <p class="card_text"> Nickname: ${nickname}</p>
+                                    <p class="card_text"> Birthday: ${birthday}</p>
+                                    <p class="card_text"> Portrayed: ${portrayed}</p>
+                                    <p class="card_text"> Status: ${status}</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                 </div>
                             </div>
@@ -236,7 +280,10 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">${name}</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                    <p class="card-text card_text">
+                                    <p>Occupation</p>
+                                    ${occupation_section}
+                                    </p>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">

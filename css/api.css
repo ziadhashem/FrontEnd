@@ -20,11 +20,15 @@
     background-color: #007b5e;
     border-color: #007b5e;
 }
-
-section {
-    padding: 60px 0;
+body{
+    flex-direction: row;
 }
 
+hr.new5 {
+    border: 10px solid #b4aee8;
+    border-radius: 5px;
+    background: #b4aee8;
+}
 
 #team .card {
     border: none;
@@ -153,15 +157,25 @@ section {
     margin-top: 5px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    padding-bottom: 10px;
-}
-
-#section_slider{
-    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #section_characters{
     padding: 0;
+    margin: 0;
+    background: #b4aee8;
+}
+#section_episodes{
+    padding: 0;
+    margin: 0;
+    background: #cee6b4;
+}
+
+#section_slider{
+    padding: 0;
+    margin: 0;
+    background: #b4aee8;
 }
 
 
@@ -172,4 +186,44 @@ section {
 .card_text{
     font-family: 'Anton', sans-serif;
     font-family: 'Architects Daughter', cursive;
+}
+
+
+blockquote{
+    border-left:none
+}
+
+.quote-badge{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quote-box{
+
+    overflow: hidden;
+    margin-top: -50px;
+    padding-top: -100px;
+    border-radius: 17px;
+    background-color: #4ADFCC;
+    margin: 25px;
+    color:white;
+    width: 325px;
+    box-shadow: 2px 2px 2px 2px #E0E0E0;
+
+
+}
+
+.quotation-mark{
+
+    margin-top: -10px;
+    font-weight: bold;
+    font-size:100px;
+    color:white;
+    font-family: "Times New Roman", Georgia, Serif;
+
+}
+
+.quote-text{
+
+    font-size: 19px;
+    margin-top: -65px;
 }
