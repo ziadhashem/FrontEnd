@@ -3,6 +3,11 @@
 /* FontAwesome for working BootSnippet :> */
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*{
+    margin:0;
+    padding:0;
+}
 #team {
     background: #eee !important;
 }
@@ -20,15 +25,7 @@
     background-color: #007b5e;
     border-color: #007b5e;
 }
-body{
-    flex-direction: row;
-}
 
-hr.new5 {
-    border: 10px solid #b4aee8;
-    border-radius: 5px;
-    background: #b4aee8;
-}
 
 #team .card {
     border: none;
@@ -129,30 +126,33 @@ hr.new5 {
 }
 /************************* my css ***************************/
 .navbar{
-    background: #ead269;
-    border-bottom: yellow dotted 1px;
+    background: #ecf0f1;
+    /* border-bottom: yellow dotted 1px; */
     opacity: 0.5;
 
 }
 
 .navbar-toggler{
-    background: yellow;
+    background: #f1c40f;
 }
 .navbar-brand{
     font-family: 'Anton', sans-serif;
-    color: black;
+    color: #f1c40f;
+    padding: 15px;
 }
 
 .nav-link{
     font-family: 'Anton', sans-serif;
     font-family: 'Architects Daughter', cursive;
-    color: black;
+    color: #f1c40f !important;
+    text-decoration: none;
+
 }
 
 .section-title{
     font-family: 'Anton', sans-serif;
     font-family: 'Architects Daughter', cursive;
-    color: darkkhaki;
+    color: #f1c40f;
     text-align: center;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -164,18 +164,28 @@ hr.new5 {
 #section_characters{
     padding: 0;
     margin: 0;
-    background: #b4aee8;
+    background: #ecf0f1;
 }
 #section_episodes{
     padding: 0;
     margin: 0;
-    background: #cee6b4;
+    background: #ecf0f1;
 }
 
-#section_slider{
+#section_quotes{
     padding: 0;
     margin: 0;
-    background: #b4aee8;
+    background: #ecf0f1;
+}
+
+.quote-box{
+    width:30%;
+}
+
+
+#site{
+    width:70%;
+    margin:0 auto;
 }
 
 
